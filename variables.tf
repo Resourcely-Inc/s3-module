@@ -4,7 +4,7 @@ variable "bucket_name" {
 }
 
 variable "versioning_status" {
-  description = "The bucket Versioning Status"
+  description = "Versioning state of the bucket"
   type        = string
   default     = "Enabled"
 }
