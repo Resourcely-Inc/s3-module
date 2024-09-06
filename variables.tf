@@ -4,7 +4,7 @@ variable "bucket_name" {
 }
 
 variable "versioning_status" {
-  description = "The AWS region"
+  description = "The bucket Versioning Status"
   type        = string
   default     = "Enabled"
 }
