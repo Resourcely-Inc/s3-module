@@ -1,5 +1,10 @@
-provider "aws" {
-  region = var.region
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.0"
+    }
+  }
 }
 
 resource "aws_s3_bucket" "test_bucket" {
@@ -26,6 +31,6 @@ resource "aws_s3_bucket_versioning" "test_bucket" {
   bucket = aws_s3_bucket.test_bucket.id
 
   versioning_configuration {
-    status = "Enabled"
+    status = var.versioning_status
   }
 }
